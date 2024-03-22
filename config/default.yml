@@ -1,0 +1,7 @@
+AllCops:
+  DisabledByDefault: true
+
+Chromebrew/CompatibilityAll:
+  Description: "This cop checks for compatibility values that can be replaced by 'all'."
+  Enabled: true
+  VersionAdded: '0.0.1'
