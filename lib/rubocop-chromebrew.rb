@@ -5,4 +5,4 @@ require_relative 'rubocop/chromebrew/inject'
 
 RuboCop::Chromebrew::Inject.defaults!
 
-require_relative 'rubocop/chromebrew/chromebrew_cops'
+require_relative 'rubocop/cop/chromebrew_cops'
