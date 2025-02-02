@@ -1,7 +1,7 @@
 Gem::Specification.new do |spec|
   spec.name     = 'rubocop-chromebrew'
   spec.summary  = 'A RuboCop extension for Chromebrew-specific practices.'
-  spec.version  = '0.0.1'
+  spec.version  = '0.0.2'
   spec.license  = 'GPL-3.0-or-later'
   spec.author   = 'Zopolis4'
   spec.email    = 'creatorsmithmdt@gmail.com'
