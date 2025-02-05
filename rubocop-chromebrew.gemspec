@@ -5,7 +5,7 @@ Gem::Specification.new do |spec|
   spec.license  = 'GPL-3.0-or-later'
   spec.author   = 'Zopolis4'
   spec.email    = 'creatorsmithmdt@gmail.com'
-  spec.homepage = 'https://github.com/Zopolis4/rubocop-chromebrew'
+  spec.homepage = 'https://github.com/chromebrew/rubocop-chromebrew'
 
   spec.files         = `git ls-files`.split("\n")
   spec.require_paths = ['lib']
