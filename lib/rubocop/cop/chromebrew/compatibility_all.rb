@@ -28,9 +28,9 @@ module RuboCop
           # Check if the compatibility value includes all four architectures.
           return unless architectures.all? { |arch| value.include?(arch) }
 
-          # If requested, replace the offending line with compatibility 'all'.
-          add_offense(node) do |corrector|
-            corrector.replace(node, "compatibility 'all'")
+          # If requested, replace the offending compatibility value with 'all'.
+          add_offense(node.children.last) do |corrector|
+            corrector.replace(node.children.last, "'all'")
           end
         end
       end
