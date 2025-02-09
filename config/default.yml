@@ -5,3 +5,8 @@ Chromebrew/CompatibilityAll:
   Description: "This cop checks for compatibility values that can be replaced by 'all'."
   Enabled: true
   VersionAdded: '0.0.1'
+
+Chromebrew/OrderedCompatibility:
+  Description: 'This cop checks for compatibility values that are not in alphabetical order.'
+  Enabled: true
+  VersionAdded: '0.0.3'
