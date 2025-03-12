@@ -1,3 +1,9 @@
+## 0.0.4 (2025-03-12)
+
+### Bug fixes
+
+* Fix disabling all non-Chromebrew cops when the extension is required ([@zopolis4][])
+
 ## 0.0.3 (2025-02-10)
 
 ### New features
