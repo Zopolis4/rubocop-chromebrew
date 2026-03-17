@@ -11,5 +11,5 @@ gem install rubocop-chromebrew
 ## Usage
 
 ```
-rubocop --require rubocop-chromebrew
+rubocop --plugin rubocop-chromebrew
 ```

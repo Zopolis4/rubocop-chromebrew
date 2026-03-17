@@ -7,8 +7,11 @@ Gem::Specification.new do |spec|
   spec.email    = 'creatorsmithmdt@gmail.com'
   spec.homepage = 'https://github.com/chromebrew/rubocop-chromebrew'
 
+  spec.metadata['default_lint_roller_plugin'] = 'RuboCop::Chromebrew::Plugin'
+
   spec.files         = `git ls-files`.split("\n")
   spec.require_paths = ['lib']
 
+  spec.add_dependency 'lint_roller'
   spec.add_runtime_dependency 'rubocop'
 end
