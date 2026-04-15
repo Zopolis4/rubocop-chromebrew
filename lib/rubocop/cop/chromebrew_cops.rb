@@ -1,2 +1,3 @@
 require_relative 'chromebrew/compatibility_all'
 require_relative 'chromebrew/ordered_compatibility'
+require_relative 'chromebrew/redundant_version_adjustment'

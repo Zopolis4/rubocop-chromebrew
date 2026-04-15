@@ -7,3 +7,8 @@ Chromebrew/OrderedCompatibility:
   Description: 'This cop checks for compatibility values that are not in alphabetical order.'
   Enabled: true
   VersionAdded: '0.0.3'
+
+Chromebrew/RedundantVersionAdjustment:
+  Description: 'This cop checks for version adjustments that do not actually change the version.'
+  Enabled: true
+  VersionAdded: '0.0.5'
