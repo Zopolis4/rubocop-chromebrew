@@ -18,12 +18,15 @@ module RuboCop
       #
       class RedundantVersionAdjustment < Base
         extend AutoCorrector
+
         MSG = 'This version adjustment does not actually change the version.'
 
+        # @!method version_adjustment?(node)
         def_node_matcher :version_adjustment?, <<~PATTERN
           (send `(send nil? :version) ...)
         PATTERN
 
+        # @!method find_package_version?(node)
         def_node_matcher :find_package_version?, <<~PATTERN
           (class (const nil? $_) (const nil? {:Autotools | :CMake | :Meson | :PERL | :Package | :Pip | :Python | :Qmake | :RUBY | :RUST}) `(send nil? :version (str $_)))
         PATTERN
@@ -55,7 +58,7 @@ module RuboCop
           # so here we just catch and ignore the NameError that results from evaluating the external version constants.
           begin
             # Check if the modifications in this node actually change the version of the package.
-            return unless eval(node.source.sub('version', "'" + original_version + "'")) == original_version
+            return unless eval(node.source.sub('version', "'#{original_version}'")) == original_version
           rescue NameError
             return
           end

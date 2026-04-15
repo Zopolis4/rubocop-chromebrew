@@ -12,8 +12,10 @@ module RuboCop
       #
       class OrderedCompatibility < Base
         extend AutoCorrector
+
         MSG = 'Compatibility values should be in alphabetical order.'
 
+        # @!method compatibility?(node)
         def_node_matcher :compatibility?, <<~PATTERN
           (send nil? :compatibility
             (str $_))

@@ -1,0 +1,44 @@
+plugins:
+  - rubocop-internal_affairs
+
+AllCops:
+  NewCops: enable
+
+Gemspec/RequireMFA:
+  Enabled: false
+
+# TODO: Find out what ruby version we actually require and then remove this.
+Gemspec/RequiredRubyVersion:
+  Enabled: false
+
+InternalAffairs/OnSendWithoutOnCSend:
+  Exclude:
+    - 'lib/rubocop/cop/chromebrew/compatibility_all.rb'
+    - 'lib/rubocop/cop/chromebrew/ordered_compatibility.rb'
+    - 'lib/rubocop/cop/chromebrew/redundant_version_adjustment.rb'
+
+Layout/LineLength:
+  Enabled: false
+
+Metrics:
+  Enabled: false
+
+Naming/FileName:
+  Enabled: false
+
+Security/Eval:
+  Exclude:
+    - 'lib/rubocop/cop/chromebrew/redundant_version_adjustment.rb'
+
+Style/ClassVars:
+  Exclude:
+    - 'lib/rubocop/cop/chromebrew/redundant_version_adjustment.rb'
+
+Style/Documentation:
+  Enabled: False
+
+Style/FrozenStringLiteralComment:
+  Enabled: False
+
+Style/MutableConstant:
+  Enabled: False

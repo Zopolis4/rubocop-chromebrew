@@ -12,8 +12,10 @@ module RuboCop
       #
       class CompatibilityAll < Base
         extend AutoCorrector
+
         MSG = "Compatibility properties which match all architectures should be replaced with 'all'"
 
+        # @!method compatibility?(node)
         def_node_matcher :compatibility?, <<~PATTERN
           (send nil? :compatibility
             (str $_))

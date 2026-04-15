@@ -1,6 +1,6 @@
 RSpec.describe RuboCop::Cop::Chromebrew::RedundantVersionAdjustment, :config do
   it 'does not register an offense when the version is never used after creation' do
-    expect_no_offenses(<<~'RUBY')
+    expect_no_offenses(<<~RUBY)
       class Foo < Package
         version '0.2.11'
       end
@@ -8,7 +8,7 @@ RSpec.describe RuboCop::Cop::Chromebrew::RedundantVersionAdjustment, :config do
   end
 
   it 'does not register an offense when not in a package or buildsystem' do
-    expect_no_offenses(<<~'RUBY')
+    expect_no_offenses(<<~RUBY)
       class Foobark < Banannas
         version '0.2.11'
         git_hashtag version.delete_prefix('release-')
@@ -17,7 +17,7 @@ RSpec.describe RuboCop::Cop::Chromebrew::RedundantVersionAdjustment, :config do
   end
 
   it 'does not register an offense when the version is not modified' do
-    expect_no_offenses(<<~'RUBY')
+    expect_no_offenses(<<~RUBY)
       class Bar < Package
         version '72a'
         git_hashtag version
@@ -45,7 +45,6 @@ RSpec.describe RuboCop::Cop::Chromebrew::RedundantVersionAdjustment, :config do
     RUBY
   end
 
-
   it 'does not register an offense when the version is usefully modified inside an interpolated string' do
     expect_no_offenses(<<~'RUBY')
       class Flop < Package
@@ -69,7 +68,7 @@ RSpec.describe RuboCop::Cop::Chromebrew::RedundantVersionAdjustment, :config do
   end
 
   it 'registers an offense when the version is uselessly modified' do
-    expect_offense(<<~'RUBY')
+    expect_offense(<<~RUBY)
       class Greb < CMake
         version '0.2.12'
         git_hashtag version.delete_prefix('release-')
@@ -77,7 +76,7 @@ RSpec.describe RuboCop::Cop::Chromebrew::RedundantVersionAdjustment, :config do
       end
     RUBY
 
-    expect_correction(<<~'RUBY')
+    expect_correction(<<~RUBY)
       class Greb < CMake
         version '0.2.12'
         git_hashtag version
