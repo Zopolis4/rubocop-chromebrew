@@ -1,3 +1,13 @@
+## 0.0.5 (2026-04-15)
+
+### New features
+
+* Add Chromebrew/RedundantVersionAdjustment cop ([@zopolis4][])
+
+### Changes
+
+* Convert to Rubocop plugin ([@zopolis4][])
+
 ## 0.0.4 (2025-03-12)
 
 ### Bug fixes
